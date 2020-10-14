@@ -64,7 +64,8 @@ export class MapComponent implements AfterViewInit {
  private getEstados()
  {
   this.dataApiService.getEstados().subscribe((estados: any) => {
-    this.arrEstados = estados;
+    this.arrEstados = estados.content;
+    console.log(this.arrEstados);
    });
  
  }
@@ -72,7 +73,8 @@ export class MapComponent implements AfterViewInit {
  private getUnidades()
  {
   this.dataApiService.getUnidades().subscribe((unidades: any) => {
-    this.arrActividades = unidades;
+    this.arrActividades = unidades.content;
+    console.log(this.arrActividades);
    });
  
  }
@@ -82,7 +84,7 @@ export class MapComponent implements AfterViewInit {
    this.dataApiService.getMunicipios(this.selectedEstado)
    .subscribe((municipios: any) => {
     this.arrMunicipios = municipios;
-
+    console.log(municipios);
    });
  
  }
@@ -96,6 +98,7 @@ export class MapComponent implements AfterViewInit {
     this.selectedMunicipio,
     this.selectedUnidad
     );
+    console.log(this.selectedEstado,this.selectedMunicipio,this.selectedUnidad);
 
  }
 
