@@ -63,18 +63,20 @@ export class MapComponent implements AfterViewInit {
 
  private getEstados()
  {
-  this.dataApiService.getEstados().subscribe((estados: any) => {
-    this.arrEstados = estados.content;
-    console.log(this.arrEstados);
+  this.dataApiService.getEstados()
+  .subscribe((estados: any) => {
+    this.arrEstados = estados;
+    console.log(estados);
    });
  
  }
 
  private getUnidades()
  {
-  this.dataApiService.getUnidades().subscribe((unidades: any) => {
-    this.arrActividades = unidades.content;
-    console.log(this.arrActividades);
+  this.dataApiService.getUnidades()
+  .subscribe((unidades: any) => {
+    this.arrActividades = unidades;
+    console.log(unidades);
    });
  
  }
